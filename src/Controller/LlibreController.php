@@ -2,8 +2,9 @@
 namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class LlibreController {
+class LlibreController extends AbstractController{
 
     private $llibres = array(
         array("isbn" => "A111B3", "titol" => "IT",
@@ -29,15 +30,12 @@ class LlibreController {
         });
         if (count($resultat) > 0)
         {
-        $resposta = "";
-        $resultat = array_shift($resultat);
-        $resposta .= "<ul><li>" . $resultat["titol"] . "</li>" .
-        "<li>" . $resultat["autor"] . "</li>" .
-        "<li>" . $resultat["pagines"] . "</li></ul>";
-        return new Response("<html><body>" .$resposta . "</body></html>");
+            return $this->render('fitxa_llibre.html.twig',
+            array('llibre' => array_shift($resultat)));
         }
         else
-        return new Response("Llibre no trobat");
+        return $this->render('fitxa_llibre.html.twig', array(
+            'llibre' => NULL));
         }
         
 }
