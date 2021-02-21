@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\LlibreRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=LlibreRepository::class)
@@ -13,21 +14,27 @@ class Llibre
     /**
      * @ORM\Id
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
+
      */
     private $isbn;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $titol;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $autor;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\GreaterThan(value=100,message="No pot tindre menys de 100 págines")
+     * @Assert\NotBlank()
      */
     private $pagines;
 

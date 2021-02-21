@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}LLibres{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+{% block body %}
+<h1>Nou llibre</h1>
+{% form_theme formulari 'bootstrap_4_layout.html.twig' %}
+{{ form_start(formulari) }}
+{{ form_widget(formulari) }}
+{{ form_end(formulari) }}
+{% endblock %}
