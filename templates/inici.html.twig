@@ -5,5 +5,10 @@
 <p>Pàgina d'inici</p>
 <p>Projecte Symfony 2n DAW</p>
 <p>Curs 20/21</p>
-<a href ="{{ path('fitxa_llibre', {'isbn': "A111B3"}) }}"> <img id="imatge" src="{{ asset('imgs/llibre.png') }}"></a> 
+<ul>
+{% for l in llibre %}
+       <a href ="{{ path('fitxa_llibre', {'isbn': l.isbn}) }}"><li>{{ l.titol }}</li></a>
+    {% endfor %}
+</ul>
+<img id="imatge" src="{{ asset('imgs/llibre.png') }}">
 {% endblock %}
