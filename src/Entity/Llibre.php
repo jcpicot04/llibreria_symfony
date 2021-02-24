@@ -15,7 +15,6 @@ class Llibre
      * @ORM\Id
      * @ORM\Column(type="string", length=20)
      * @Assert\NotBlank()
-
      */
     private $isbn;
 

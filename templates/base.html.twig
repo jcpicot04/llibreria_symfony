@@ -9,8 +9,14 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
+    {% if app.user %}
+    <a href ="{{path('logout')}}">Tancar sessió</a>
+    <a href ="{{path('nou_formulari')}}">Llibre nou</a>
+    {% endif %}
+     {% if is_granted('ROLE_ADMIN') %}
+    <a href ="{{path('usuari')}}">Gestio d'usuaris</a>
+    {% endif %}
      <a href ="{{path('inici')}}">Torna a l'inici</a>
-     <a href ="{{path('nou_formulari')}}">Nou formulari</a>
         {% block body %}
         {% endblock %}
     </body>
