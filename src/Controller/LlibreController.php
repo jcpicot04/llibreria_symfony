@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Jenssegers\Date\Date;
 
 class LlibreController extends AbstractController{
 
@@ -129,6 +130,5 @@ return $this->render('nou.html.twig',array('formulari' => $formulari->createView
     'llibre' => $resultat
     ));
     }
-
     }
 ?>

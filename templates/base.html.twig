@@ -15,6 +15,7 @@
     {% endif %}
      {% if is_granted('ROLE_ADMIN') %}
     <a href ="{{path('usuari')}}">Gestio d'usuaris</a>
+    <a href ="{{path('admin')}}">Easy Admin</a>
     {% endif %}
      <a href ="{{path('inici')}}">Torna a l'inici</a>
         {% block body %}
